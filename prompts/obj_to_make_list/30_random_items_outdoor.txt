@@ -1,0 +1,25 @@
+Rock
+Brick
+Paving stone
+Metal railing
+Wooden fence post
+Plastic trash can
+Fire hydrant
+Street sign
+Traffic cone
+Construction barrier
+Park bench
+Metal street lamp
+Wooden park bench
+Recycling bin
+Bike rack
+Mailbox
+Street grate
+Manhole cover
+Utility box
+Metal traffic light
+Wooden telephone pole
+Statue
+Public art sculpture
+Garden gnome
+Flower pot

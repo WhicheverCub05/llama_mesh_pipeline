@@ -1,0 +1,51 @@
+{
+  "global": {
+    "host": "http://localhost:11434",
+    "context_window": 8192,
+    "backend": "ollama"
+  },
+  "stages": [
+    {
+      "name": "stage1_description",
+      "input": {
+        "type": "file",
+        "path": "prompts/input.txt",
+        "delimiter": "\n"
+      },
+      "prompt": {
+        "template": "Create a description for: <>",
+        "insert_key": "<>"
+      },
+      "model": "llama3.2:1b",
+      "model_params": {
+        "temperature": 0.7,
+        "top_p": 0.9
+      },
+      "output": {
+        "wrapped_file": "prompts/wrapped/stage1.txt",
+        "csv_file": "prompts/results/stage1.csv"
+      }
+    },
+    {
+      "name": "stage2_translation",
+      "input": {
+        "type": "previous_csv"
+      },
+      "prompt": {
+        "template": "Translate to OBJ format:<>",
+        "insert_key": "<>"
+      },
+      "model": "llama3.1-8b-mesh",
+      "model_params": {
+        "temperature": 0.5,
+        "top_p": 0.95,
+        "num_predict": 2048
+      },
+      "output": {
+        "wrapped_file": "prompts/wrapped/stage2.txt",
+        "csv_file": "prompts/results/stage2.csv",
+        "intermediate_file": "prompts/stage2_input.txt"
+      }
+    }
+  ]
+}

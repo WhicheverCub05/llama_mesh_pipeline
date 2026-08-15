@@ -1,0 +1,42 @@
+{
+  "global": {
+    "host": "http://localhost:11434",
+    "context_window": 8192
+  },
+  "stages": [
+    {
+      "name": "stage1_description_generation",
+      "input": {
+        "type": "file",
+        "path": "prompts/obj_to_make_list/30_random_items_outdoor.txt",
+        "delimiter": "\n"
+      },
+      "prompt": {
+        "template": "write a description in plain text that first names the following object then describes its basic geometry features using sets of primitive objects in the format <object name>, a <description>. explain directly in few words. do not describe or mention colour, lighting, aesthetics, intenet, or explinations. do not ask questions or provide suggestions:<>",
+        "insert_key": "<>" 
+      },
+      "model": "gemma3:1b",
+      "output": {
+        "wrapped_file": "prompts/gemma3/wrapped/30rio_s1.txt",
+        "csv_file": "prompts/gemma3/result/30rio_s1.csv"
+      }
+    },
+    {
+      "name": "stage2_jargon_translation",
+      "input": {
+        "type": "previous_csv",
+        "delimiter": "\n"
+      },
+      "prompt": {
+        "template": "Create a 3D obj file using the following description:<>. directly output the obj file:",
+        "insert_key": "<>"
+      },
+      "model": "llama3.1-8b-mesh",
+      "output": {
+        "wrapped_file": "prompts/llama-mesh/wrapped/30rio_wrapped_s2.txt",
+        "csv_file": "prompts/llama-mesh/result/30rio_final.csv",
+        "intermediate_file": "prompts/llama-mesh/stage2_input.txt"
+      }
+    }
+  ]
+}

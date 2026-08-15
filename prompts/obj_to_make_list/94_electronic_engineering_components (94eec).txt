@@ -1,0 +1,94 @@
+Arduino Starter Kit
+LED Strip Lights
+Resistor Diodes
+Capacitors (various values)
+Transistors (NPN & PNP)
+Microcontroller (Arduino, Raspberry Pi Pico)
+Breadboard
+Jumper Wires
+Wires
+Breadboard
+Voltage Regulator
+LED Driver Module
+Motor Driver (L298N)
+Servo Motor
+Gear Motor
+DC Motor
+Battery Holder
+Solar Panel
+Button Circuit
+Relay Module
+Switch Circuit
+Motor Control
+LED Sensor
+Temperature Sensor
+Humidity Sensor
+Accelerometer
+Gyroscope
+Line Follower Robot
+Obstacle Avoidance System
+DIY Bluetooth Speaker
+Waveform Generator
+Digital Timer
+Ultrasonic Sensor
+Light Sensor
+Piezo Buzzer
+Soundboard
+Microphone
+Audio Amplifier
+Oscillator Circuit
+FM Transmitter/Receiver
+Radio Receiver
+Speaker Driver
+Speaker Subwoofer
+DIY Karaoke Machine
+LED Maze
+Water Flow Sensor
+Rain Sensor
+Light-Activated Garden
+Automatic Watering System
+DIY Drone Controller
+Servo Flight Controller
+Camera Module
+GPS Tracker
+RFID Reader
+Barcode Scanner
+Thermal Camera
+Data Logger
+Wireless Sensor Node
+DIY Weather Station
+Robotic Arm
+Remote Control Receiver
+Miniature Servo
+Voltage Tester
+Multimeter
+Oscilloscope
+Crystal Oscillator
+Waveform Analyzer
+Oscilloscope Display
+Signal Generator
+Voltage Multiplier
+LED Matrix
+Crystal Oscillator Circuit
+DIY Guitar Amplifier
+Sound Synthesis Module
+Microphone Array
+Bluetooth Tracker
+DIY Drone
+Embedded System
+Circuit Board Design
+Stepper Motor
+Linear Motor
+DIY Projector
+Stealth Camera
+Thermal Imaging Camera
+Motorized Fan
+Miniature Servo Drive
+Wireless Network
+DIY Smart Mirror
+Robotics Platform
+Sensor Network
+Automatic Plant Watering System
+DIY LED Puzzle
+Geospatial Sensor
+Data Visualization Dashboard

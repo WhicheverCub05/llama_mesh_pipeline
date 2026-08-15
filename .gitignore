@@ -1,0 +1,30 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Local tooling / config
+.vscode/
+run_pipeline.bat
+
+# Pipeline runtime state
+.pipeline_checkpoint.json
+.prompt_cache/
+
+# Generated pipeline outputs
+prompts/**/wrapped/
+prompts/**/result/
+prompts/**/described/
+prompts/llama-mesh/stage2_input.txt
+prompts/llama-mesh/to_wrap/
+
+# Test artifacts
+tests/*.csv
+tests/extracted.txt
+tests/test_checkpoint.json
+tests/test_objs/
+tests/test_output/
+tests/test_renders/

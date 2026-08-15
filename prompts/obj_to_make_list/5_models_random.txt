@@ -1,0 +1,5 @@
+Apple
+Cat
+Dog
+Chair
+Table

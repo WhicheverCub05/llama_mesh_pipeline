@@ -1,0 +1,10 @@
+CPU
+Motherboard
+RAM
+Graphics Card
+SSD
+HDD
+Power Supply
+Case
+Optical Drive
+Keyboard
