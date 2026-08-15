@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-pipeline"
+version = "0.3.0"
+description = "Multi-stage LLM pipeline for batch text processing and 3D model generation"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.31.0",
+    "tqdm>=4.66.0",
+    "jsonschema>=4.20.0",
+]
+
+[project.scripts]
+llm-pipeline = "llm_pipeline.cli.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
