@@ -1,6 +1,6 @@
 # LLM Pipeline
 
-This project was originally made to automate the production of 3D models by running a finetuned llama3.1-8B model which outputs the text of an OBJ file describing vertices, faces and edges. The 3D generation model is [LLaMA-Mesh](https://research.nvidia.com/labs/toronto-ai/LLaMA-Mesh/), a finetuned LLM for 3D generation — see the [paper](https://arxiv.org/html/2411.09595v1), the [finetuned model weights](https://huggingface.co/Zhengyi/LLaMA-Mesh), and the [demo](https://huggingface.co/spaces/Zhengyi/LLaMA-Mesh). I hosted model weights using llama.cpp on a local machine.
+This project was originally made to automate the production of 3D models by running a finetuned llama3.1-8B llm model which outputs the text of an OBJ file describing vertices, faces and edges. The 3D generation model is [LLaMA-Mesh](https://research.nvidia.com/labs/toronto-ai/LLaMA-Mesh/), a finetuned LLM for 3D generation — see the [paper](https://arxiv.org/html/2411.09595v1), the [finetuned model weights](https://huggingface.co/Zhengyi/LLaMA-Mesh), and the [demo](https://huggingface.co/spaces/Zhengyi/LLaMA-Mesh). I hosted model weights using llama.cpp on a local machine.
 
 What it is: a pipeline for text->text || text->3D mesh (OBJ) || OBJ -> img.
 
