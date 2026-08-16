@@ -6,6 +6,89 @@ What it is: a pipeline for text->text || text->3D mesh (OBJ) || OBJ -> img.
 
 The pipeline chains multiple stages together. Each stage wraps input text with custom prompts, generates outputs via Ollama or vLLM, and saves results as CSV files. Outputs from one stage can feed into the next, enabling multi-stage processing pipelines.
 
+<!-- insert gif stacking queue of inferance.-->
+
+recycling bin and Rectangular prism
+
+[1] describe a <object="rectangular prism", llm=>
+
+[2] 
+
+> Prompt: f"Create a 3D obj file using the following description: The object is a {rectangular prism}".
+
+> gemma3: "[a rectangular prism. It has six straight sides, with a base length of 10cm and a height of 5cm. The prism has a width of 5cm and a depth of 5cm. It’s composed of six unit cubes arranged in a rectangular pattern..] directly output the obj file:"
+
+> ````obj
+> ```
+> v 0 0 10
+> v 0 0 52
+> v 0 5 10
+> ...
+> f 107 111 110
+> ```
+> ````
+
+[1] bin                                      [2] rectanglar prism              [3] traffic cone                          
+
+<table>
+  <tr>
+    <td><img src=".\examples\generated\30rio_final_13_img.jpg" width="200"></td>
+    <td><img src=".\examples\generated\10pc_final_2_img.jpg" width="200"></td>
+    <td><img src=".\examples\generated\30rio_final_8_img.jpg"width="200"></td>
+  </tr>
+</table>
+
+Config:
+
+```
+{
+{
+  "global": {
+    "host": "http://localhost:11434",
+    "context_window": 8192
+  },
+  "stages": [
+    {
+      "name": "stage1_description_generation",
+      "input": {
+        "type": "file",
+        "path": "prompts/obj_to_make_list/10_pc_components.txt",
+        "delimiter": "\n"
+      },
+      "prompt": {
+        "template": "write a description in plain text that first names the following object then describes its basic geometry features using sets of primitive objects in the format <object name>, a <description>. explain directly in few words. do not describe or mention colour, lighting, aesthetics, intenet, or explinations. do not ask questions or provide suggestions:<>",
+        "insert_key": "<>" 
+      },
+      "model": "gemma3:1b",
+      "output": {
+        "wrapped_file": "prompts/gemma3/wrapped/10pc_wrapped_s2.txt",
+        "csv_file": "prompts/gemma3/result/PC/10pc_final.csv"
+      }
+    },
+    {
+      "name": "stage2_jargon_translation",
+      "input": {
+        "type": "previous_csv",
+        "delimiter": "\n"
+      },
+      "prompt": {
+        "template": "Create a 3D obj file using the following description:<>. directly output the obj file:",
+        "insert_key": "<>"
+      },
+      "model": "llama3.1-8b-mesh",
+      "output": {
+        "wrapped_file": "prompts/llama-mesh/wrapped/10pc_wrapped_s2.txt",
+        "csv_file": "prompts/llama-mesh/result/10pc_final.csv",
+        "intermediate_file": "prompts/llama-mesh/stage2_input.txt"
+      }
+    }
+  ]
+}
+
+}
+
+```
+
 ## Overview
 
 The pipeline is designed for multi-stage text processing. It supports both Ollama and vLLM backends through a unified interface. You can define a sequence of operations (e.g., Summarization $\rightarrow$ Translation $\to$ Formatting) via a single JSON configuration file.
