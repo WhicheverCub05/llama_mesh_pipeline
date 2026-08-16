@@ -8,12 +8,6 @@ The pipeline chains multiple stages together. Each stage wraps input text with c
 
 <!-- insert gif stacking queue of inferance.-->
 
-recycling bin and Rectangular prism
-
-[1] describe a <object="rectangular prism", llm=>
-
-[2] 
-
 > Prompt: f"Create a 3D obj file using the following description: The object is a {rectangular prism}".
 
 > gemma3: "[a rectangular prism. It has six straight sides, with a base length of 10cm and a height of 5cm. The prism has a width of 5cm and a depth of 5cm. It’s composed of six unit cubes arranged in a rectangular pattern..] directly output the obj file:"
