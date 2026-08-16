@@ -28,7 +28,7 @@ The pipeline chains multiple stages together. Each stage wraps input text with c
   <tr>
     <td><img src=".\examples\generated\30rio_final_13_img.jpg" width="200"></td>
     <td><img src=".\examples\generated\10pc_final_2_img.jpg" width="200"></td>
-    <td><img src=".\examples\generated\30rio_final_8_img.jpg"width="200"></td>
+    <td><img src=".\examples\generated\30rio_final_8_img.jpg" width="200"></td>
   </tr>
 </table>
 
